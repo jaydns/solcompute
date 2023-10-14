@@ -1,4 +1,4 @@
-import { Card, CardBody, CardHeader, Divider, CardFooter, Image } from "@nextui-org/react";
+import { Card, CardBody, CardHeader, Divider, CardFooter, Image, Button } from "@nextui-org/react";
 import { MdArrowUpward, MdArrowDownward } from "react-icons/md";
 
 
@@ -42,6 +42,40 @@ export default function ExpandedPageLayout( props ) {
                 <p className="font-bold">Network Information</p>
             </CardHeader>
             <Divider></Divider>
+            <CardBody>
+                <p>Type: Wired</p>
+                <p>Download: 100 Mbps</p>
+                <p>Upload: 100 Mbps</p>
+                <p>Data transferred: 21.05 GB</p>
+            </CardBody>
+        </Card>
+
+        <Card className="min-w-[28rem]">
+            <CardHeader>
+                <p className="font-bold">Storage Information</p>
+            </CardHeader>
+            <Divider></Divider>
+            <CardBody>
+                <p>Total: 2.5 TB</p>
+                <p>Used: 1.6 TB</p>
+                <p>Available: 0.9 TB</p>
+                <p>Read speed: 50 MB/s</p>
+                <p>Write speed: 200 MB/s</p>
+            </CardBody>
+        </Card>
+
+        <Card className="min-w-[28rem]">
+            <CardHeader>
+                <p className="font-bold">Memory Information</p>
+            </CardHeader>
+            <Divider></Divider>
+            <CardBody>
+                <p>Total: 16 GB</p>
+                <p>Speed: 2400 MHz</p>
+                <p>In use: 8.3 GB</p>
+                <p>Available: 7.7 GB</p>
+                <p>Cached: 3 GB</p>
+            </CardBody>
         </Card>
 
         <Card className="min-w-[28rem]">
@@ -49,6 +83,13 @@ export default function ExpandedPageLayout( props ) {
                 <p className="font-bold">CPU Information</p>
             </CardHeader>
             <Divider></Divider>
+            <CardBody>
+                <p>AMD EPYC</p>
+                <p>Utilization: 1%</p>
+                <p>Speed: 4.04 GHz</p>
+                <p>Cores: 16</p>
+                <p>Threads: 32</p>
+            </CardBody>
         </Card>
 
         <Card className="min-w-[28rem]">
@@ -56,6 +97,11 @@ export default function ExpandedPageLayout( props ) {
                 <p className="font-bold">GPU Information</p>
             </CardHeader>
             <Divider></Divider>
+            <CardBody>
+                <p>NVIDIA GeForce RTX 4090</p>
+                <p>Utilization: 1%</p>
+                <p>GPU Memory: 16 GB</p>
+            </CardBody>
         </Card>
 
         <Card className="min-w-[28rem]">
@@ -63,6 +109,13 @@ export default function ExpandedPageLayout( props ) {
                 <p className="font-bold">Renting</p>
             </CardHeader>
             <Divider></Divider>
+            <CardBody>
+                <p>Cost: $0.018/hr</p>
+            </CardBody>
+            <Divider></Divider>
+            <CardFooter>
+                <Button variant="solid" color="primary" className="mx-auto" >Rent</Button>
+            </CardFooter>
         </Card>
         </div>
         </>
