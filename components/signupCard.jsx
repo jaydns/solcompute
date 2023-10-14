@@ -1,4 +1,4 @@
-import { Button, Card, CardBody, CardFooter, CardHeader, Divider, Input, Link, toggle } from "@nextui-org/react";
+import { Button, Card, CardBody, CardFooter, CardHeader, Divider, Input, Link, RadioGroup, Radio } from "@nextui-org/react";
 import { useState } from "react";
 import { AiFillEye, AiFillEyeInvisible} from "react-icons/ai"
 
@@ -24,6 +24,10 @@ export default function SignUpCard( props ) {
                             )}
                         </button>
                     }></Input>
+                    <RadioGroup label="What are you using this account for?">
+                        <Radio value="host">Hosting</Radio>
+                        <Radio value="renting">Renting</Radio>
+                    </RadioGroup>
                 </CardBody>
                 <Divider></Divider>
                 <CardFooter className="flex flex-col gap-y-2">
