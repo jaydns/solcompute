@@ -5,7 +5,7 @@ import { Link } from "@nextui-org/react";
 export default function AppNavbar() {
     return (
         <>
-            <Navbar>
+            <Navbar className="mb-6">
                 <NavbarBrand>
                     <Image src="/Solana_logo.png" width={50} height={50} alt="idk" className="font-bold mr-2"></Image>
                     <p>SolanaCompute</p>

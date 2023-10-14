@@ -1,9 +1,12 @@
 import AppNavbar from "@/components/appNavbar";
+import SignUpCard from "@/components/signupCard";
 
-export default function SignupPage(props) {
+export default function SignUpPage(props) {
   return (
     <>
-      <AppNavbar></AppNavbar>
+      <div className="flex flex-row justify-center">
+        <SignUpCard></SignUpCard>
+      </div>
     </>
   );
 }

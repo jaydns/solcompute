@@ -7,8 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function ClientsPage() {
   return (
     <>
-      <AppNavbar />
-      <div className="flex mt-12 flex-wrap gap-6 justify-center">
+      <div className="flex flex-wrap gap-6 justify-center">
         <ClientCard></ClientCard>
         <ClientCard></ClientCard>
         <ClientCard></ClientCard>
