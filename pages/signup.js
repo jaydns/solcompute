@@ -1,4 +1,3 @@
-import AppNavbar from "@/components/appNavbar";
 import SignUpCard from "@/components/signupCard";
 
 export default function SignUpPage(props) {
