@@ -1,10 +1,14 @@
 import { Button, Card, CardBody, CardFooter, CardHeader, Divider, Image } from "@nextui-org/react";
 import SolanaWallet from "./paymentWallet";
+import { useState } from "react";
 
 export default function PaymentCards( props ) {
+    const [showAddress, setShowAddress] = useState(false);
+
+    const toggleShowAddress = () => setShowAddress(!showAddress);
     return (
         <>
-        <Card className="max-w-xl min-w-[28rem]">
+        <Card className="max-w-xl min-w-[28rem] min-h-[16rem] max-h-64 place-self-center">
             <CardHeader>
                 <div>
                     <p className="font-bold">Usage</p>
@@ -13,30 +17,32 @@ export default function PaymentCards( props ) {
             <Divider></Divider>
             <CardBody>
                 <div>
-                    <p>Balance Due: $534.32</p>
+                    <p>Balance Due: 0.069 SOL</p>
                 </div>
             </CardBody>
             <Divider></Divider>
             <CardFooter>
                 <Button color="success" className="mx-auto">Pay Now</Button>
             </CardFooter>
-
         </Card>
-        <Card className="max-w-xl min-w-[28rem]">
+        <Card className="max-w-xl min-w-[20rem]">
             <CardHeader className="flex flex-row gap-4">
             <div>
-                <p className="font-bold">Payment Methods</p>
+                <p className="font-bold">Solana Wallet</p>
             </div>
             </CardHeader>
             <Divider></Divider>
-            <CardBody className="flex flex-col gap-6">
-                <SolanaWallet address="3n2C45yBiNapKh6EdDekesZccAFdwTatu46Eyw1UnKx2"></SolanaWallet>
-                <SolanaWallet></SolanaWallet>
-                <SolanaWallet></SolanaWallet>
+            <CardBody className="flex flex-row justify-center">
+                <Image src="/testQR.png" width={240} height={240} alt="Wallet QR"></Image>
             </CardBody>
             <Divider></Divider>
-            <CardFooter>
-                <Button className="mx-auto">Add</Button>
+            <CardFooter className="flex flex-row gap-2 justify-between">
+                <p className="hover:cursor-pointer text-small w-36 break-all" onClick={toggleShowAddress}>{showAddress ? (
+                    props.address
+                ) : (
+                    "Show Address"
+                )}</p>
+                <Button color="danger">Remove</Button>
             </CardFooter>
         </Card>
         </>
