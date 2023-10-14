@@ -1,20 +1,25 @@
-import { Card, CardBody, CardFooter, CardHeader, Divider } from "@nextui-org/react";
+import { Card, CardBody, CardFooter, CardHeader, Divider, Button } from "@nextui-org/react";
 import { MdArrowUpward, MdArrowDownward } from "react-icons/md";
 import Image from "next/image";
 import ReactCountryFlag from "react-country-flag";
+import { useState } from "react";
 
-export default function RentCard(props) {
+export default function DeviceCard(props) {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleIsOpen = () => setIsOpen(!isOpen);
     return (
         <>
-            <Card className="transition ease-in-out delay-75 max-w-lg max-h-64 min-w-[28rem] hover:cursor-pointer hover:scale-[1.02] hover:-translate-y-2">
+            <Card isPressable onClick={toggleIsOpen} className="transition ease-in-out delay-75 min-w-[28rem] max-h-64 hover:cursor-pointer hover:scale-[1.02] hover:-translate-y-2">
                 <CardHeader className="flex flex-row gap-3">
                     <Image src="/Ubuntu.png" width={40} height={40} alt="Server Image"></Image>
-                    <div className="flex flex-col grow">
-                        <p className="text-md">Ubuntu Server</p>
-                        <p className="text-sm">Running</p>
+                    <div className="flex flex-col">
+                        <p className="text-md w-fit">Ubuntu Server</p>
+                        <p className="text-sm w-fit">Running</p>
                     </div>
-                    <div>
-                        <p className="">$0.018/hr</p>
+                    <div className="ml-auto">
+                    <p className="">$0.018/hr</p>
+
                     </div>
                 </CardHeader>
                 <Divider></Divider>
@@ -37,8 +42,8 @@ export default function RentCard(props) {
                     </div>
                 </CardBody>
                 <Divider></Divider>
-                <CardFooter className="flex flex-row gap-3">
-                    <p className="grow">TFLOPS: 90.8</p>
+                <CardFooter className="flex flex-row justify-between gap-3">
+                    <p>TFLOPS: 90.8</p>
                     <div className="flex flex-row gap-3">
                         <p>MI, US</p>
                         <ReactCountryFlag countryCode="US" className="m-auto"></ReactCountryFlag>

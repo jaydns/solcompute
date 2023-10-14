@@ -1,5 +1,5 @@
 import FilterCard from "./filterCard";
-import RentCard from "./rentCard";
+import DeviceCard from "./deviceCard";
 
 export default function RentPageLayout( props ) {
     return (
@@ -7,15 +7,14 @@ export default function RentPageLayout( props ) {
         <div className="flex flex-row justify-center">
                 <FilterCard></FilterCard>
         </div>
-        
             <div className="flex flex-wrap gap-6 justify-center">
-                <RentCard></RentCard>
-                <RentCard></RentCard>
-                <RentCard></RentCard>
-                <RentCard></RentCard>
-                <RentCard></RentCard>
-                <RentCard></RentCard>
-                <RentCard></RentCard>
+                <DeviceCard></DeviceCard>
+                <DeviceCard></DeviceCard>
+                <DeviceCard></DeviceCard>
+                <DeviceCard></DeviceCard>
+                <DeviceCard></DeviceCard>
+                <DeviceCard></DeviceCard>
+                <DeviceCard></DeviceCard>
             </div>
         </>
     )
