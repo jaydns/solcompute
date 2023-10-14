@@ -1,16 +1,17 @@
 import { Card, CardBody, CardFooter, CardHeader, Divider, Button } from "@nextui-org/react";
+import { useRouter } from "next/router"
 import { MdArrowUpward, MdArrowDownward } from "react-icons/md";
 import Image from "next/image";
 import ReactCountryFlag from "react-country-flag";
-import { useState } from "react";
+
+function onDeviceCardClick() {
+
+}
 
 export default function DeviceCard(props) {
-    const [isOpen, setIsOpen] = useState(false);
-
-    const toggleIsOpen = () => setIsOpen(!isOpen);
     return (
         <>
-            <Card isPressable onClick={toggleIsOpen} className="transition ease-in-out delay-75 min-w-[28rem] max-h-64 hover:cursor-pointer hover:scale-[1.02] hover:-translate-y-2">
+            <Card isPressable onClick={onDeviceCardClick} className="transition ease-in-out delay-75 min-w-[28rem] max-h-64 hover:cursor-pointer hover:scale-[1.02] hover:-translate-y-2">
                 <CardHeader className="flex flex-row gap-3">
                     <Image src="/Ubuntu.png" width={40} height={40} alt="Server Image"></Image>
                     <div className="flex flex-col">
