@@ -9,7 +9,7 @@ export default function AppNavbar() {
     const pathname = usePathname()
     return (
         <>
-            <Navbar className="mb-6 data-[active=true]:after:color">
+            <Navbar position="static" className="mb-6 data-[active=true]:after:color">
                 <NavbarBrand>
                     <Image src="/Solana_logo.png" width={50} height={50} alt="idk" className="font-bold mr-2"></Image>
                     <p>SolanaCompute</p>
