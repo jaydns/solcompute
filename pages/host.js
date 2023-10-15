@@ -1,5 +1,6 @@
 import CardBodyHost from "@/components/cardBodyHosts";
 import DeviceCard from "@/components/deviceCard";
+import useUser from "@/lib/useUser";
 import {
   Card,
   CardBody,
@@ -8,10 +9,26 @@ import {
   CardFooter,
   Button,
   Code,
+  CircularProgress,
 } from "@nextui-org/react";
 import Head from "next/head";
+import { useEffect, useState } from "react";
 
 export default function HostPage() {
+  const { data, mutateUser } = useUser();
+
+  const [machineRawData, setData] = useState(null)
+  const [isLoading, setLoading] = useState(true)
+
+  useEffect(() => {
+    fetch('/api/userMachines')
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data)
+        setLoading(false)
+      })
+  }, [])
+
   return (
     <>
       <Head>
@@ -24,10 +41,10 @@ export default function HostPage() {
           </CardHeader>
           <Divider></Divider>
           <CardBody>
-            <p>1. Install docker and docker compose on your distro</p>
+            <p>1. Ensure Docker and Docker Compose are installed.</p>
             <p>2. Download the client binary below</p>
             <p>
-              3. Run the client with <Code>--key</Code>
+              3. When prompted, enter the key <Code>{data?.user?.id}</Code> to connect your account to the machine.
             </p>
           </CardBody>
           <Divider></Divider>
@@ -44,11 +61,18 @@ export default function HostPage() {
             </CardHeader>
             <Divider></Divider>
             <div className="overflow-auto">
-              <CardBodyHost></CardBodyHost>
-              <CardBodyHost></CardBodyHost>
-              <CardBodyHost></CardBodyHost>
-              <CardBodyHost></CardBodyHost>
-              <CardBodyHost></CardBodyHost>
+              {isLoading && <CircularProgress size="lg" aria-label="Loading..." />}
+              {machineRawData?.data?.map((machine) => (
+                <DeviceCard
+                  key={machine.id}
+                  operatingSystem={machine.operatingSystem}
+                  cpu={machine.cpu}
+                  gpu={machine.gpu}
+                  ramGbs={machine.ramGbs}
+                  downloadSpeed={machine.downloadSpeedMbps}
+                  uploadSpeed={machine.uploadSpeedMbps}
+                />
+              ))}
             </div>
           </Card>
         </div>

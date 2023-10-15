@@ -25,6 +25,15 @@ model Machine {
     renterId     String?
     owner        User    @relation(name: "rentedMachines", fields: [userId], references: [id], onDelete: Cascade)
     userId       String
+
+    operatingSystem   String?
+    cpu               String?
+    ramGbs            Int?
+    gpu               String?
+    onTime            DateTime?
+    downloadSpeedMbps Int?
+    uploadSpeedMbps   Int?
+    location          String?
 }
 
 model Transaction {

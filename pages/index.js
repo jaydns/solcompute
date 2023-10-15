@@ -28,14 +28,12 @@ export default function Home() {
             Decentralized
           </h1>
           <h1 className="font-semibold text-6xl">Computing.</h1>
-          <p className="text-center max-w-md mx-auto mt-4 text-default-800">
-            Powered by the Solana blockchain, which means that it is
-            confidential and secure. Users can be confident that their data and
-            transactions are safe.
+          <p className="text-center max-w-xl mx-auto mt-4 text-default-800">
+            Unlock the power of collective computing. We bridge the gap between unused computational resources and those in need. Rent out your idle compute power or tap into a vast network of GPUs to train your AIs, or CPUs to run your simulations and other CPU bound tasks.<br />All backed by Solana.
           </p>
           <div className="flex flex-row justify-center gap-4">
             <Button
-              className="w-24 mx-auto mt-8"
+              className="w-48 h-12 mx-auto mt-8"
               onClick={() => router.push("/signup")}
               variant="shadow"
               color="success"
@@ -44,29 +42,34 @@ export default function Home() {
             </Button>
           </div>
           <div className="flex flex-row gap-4 mt-8">
-            <Card className="max-w-md max-h-64">
+            <Card isBlurred={true} className="max-w-md max-h-64">
               <CardHeader>
-                <h1>Passive Income.</h1>
+                <h1>Cost Savings</h1>
               </CardHeader>
-              <Divider></Divider>
               <CardBody>
                 <p>
-                  Users can earn passive income by renting out their computing
-                  power to others. This is a great way to make extra money
-                  without having to do anything extra.
+                  Access unmatched rates by tapping into underutilized resources. Your wallet will thank you.
                 </p>
               </CardBody>
             </Card>
-            <Card className="max-w-md max-h-64 ">
+            <Card isBlurred={true} className="max-w-md max-h-64 outline-8">
               <CardHeader>
-                <h1>Support large projects</h1>
+                <h1>Truly Decentralized</h1>
               </CardHeader>
-              <Divider></Divider>
               <CardBody>
                 <p>
-                  Empower your team with scalable, efficient, and transparent
-                  computing power. <br /> <br /> Access a global network of
-                  computing resources to support your most ambitious projects.
+                  Dive into a network that&apos;s resilient and scalable, far beyond centralized systems.
+                </p>
+              </CardBody>
+            </Card>
+            <Card isBlurred={true} className="max-w-md max-h-64 ">
+              <CardHeader>
+                <h1>Always Accessible</h1>
+              </CardHeader>
+
+              <CardBody>
+                <p>
+                  From top-tier researchers to budding enthusiasts, there&apos;s space for everyone.
                 </p>
               </CardBody>
             </Card>
