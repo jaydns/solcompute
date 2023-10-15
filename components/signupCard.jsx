@@ -1,5 +1,6 @@
-import { Button, Card, CardBody, CardFooter, CardHeader, Divider, Input, Link, RadioGroup, Radio } from "@nextui-org/react";
+import { Button, Card, CardBody, CardFooter, CardHeader, Divider, Input, RadioGroup, Radio } from "@nextui-org/react";
 import { useState } from "react";
+import Link from "next/link"
 import { AiFillEye, AiFillEyeInvisible} from "react-icons/ai"
 
 export default function SignUpCard( props ) {
@@ -32,7 +33,7 @@ export default function SignUpCard( props ) {
                 <Divider></Divider>
                 <CardFooter className="flex flex-col gap-y-2">
                     <Button className="mx-auto" color="primary">Confirm</Button>
-                    <Link color="foreground" href="#test">Already have an account?</Link>
+                    <Link color="foreground" href="/login">Already have an account?</Link>
                 </CardFooter>
             </Card>
         </>
