@@ -16,6 +16,7 @@ export default withIronSessionApiRoute(
             });
 
             req.session.user = {
+                isLoggedIn: true,
                 id: user.id,
                 email: user.email,
                 type: user.type,
