@@ -5,7 +5,7 @@ export default function ExpandedPage() {
   return (
     <>
       <Head>
-        <title>Device Information | SolCompute</title>
+        <title>Machine Information | SolCompute</title>
       </Head>
       <ExpandedPageLayout></ExpandedPageLayout>;
     </>

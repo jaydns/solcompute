@@ -21,21 +21,27 @@ export default function AppNavbar() {
                 </NavbarBrand>
                 {user?.isLoggedIn && (<>
                     <NavbarContent justify="center">
-                        <NavbarItem isActive={pathname === "/rent"}>
+                        {user.type === "CONSUMER" && (<><NavbarItem isActive={pathname === "/rent"}>
                             <Link href="/rent" className={(pathname === "/rent") ? "text-primary" : "text-foreground"}>
                                 Rent
                             </Link>
                         </NavbarItem>
-                        <NavbarItem isActive={pathname === "/machines"}>
-                            <Link href="/machines" className={(pathname === "/machines") ? "text-primary" : "text-foreground"}>
-                                Machines
-                            </Link>
-                        </NavbarItem>
-                        <NavbarItem isActive={pathname === "/billing"}>
-                            <Link href="/billing" className={(pathname === "/billing") ? "text-primary" : "text-foreground"}>
-                                Billing
-                            </Link>
-                        </NavbarItem>
+                            <NavbarItem isActive={pathname === "/machines"}>
+                                <Link href="/machines" className={(pathname === "/machines") ? "text-primary" : "text-foreground"}>
+                                    Machines
+                                </Link>
+                            </NavbarItem>
+                            <NavbarItem isActive={pathname === "/billing"}>
+                                <Link href="/billing" className={(pathname === "/billing") ? "text-primary" : "text-foreground"}>
+                                    Billing
+                                </Link>
+                            </NavbarItem></>)}
+                        {user.type === "HOST" && (<>
+                            <NavbarItem isActive={pathname === "/host"}>
+                                <Link href="/host" className={(pathname === "/host") ? "text-primary" : "text-foreground"}>
+                                    Machines
+                                </Link>
+                            </NavbarItem></>)}
                     </NavbarContent></>)}
                 <NavbarContent justify="end">
                     {!user?.isLoggedIn && (<><NavbarItem>
