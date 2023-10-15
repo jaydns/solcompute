@@ -37,12 +37,11 @@ export default function PaymentCards( props ) {
             </CardBody>
             <Divider></Divider>
             <CardFooter className="flex flex-row gap-2 justify-between">
-                <p className="hover:cursor-pointer text-small w-36 break-all" onClick={toggleShowAddress}>{showAddress ? (
+                <p className="hover:cursor-pointer text-small w-64 break-all mx-auto" onClick={toggleShowAddress}>{showAddress ? (
                     props.address
                 ) : (
                     "Show Address"
                 )}</p>
-                <Button color="danger">Remove</Button>
             </CardFooter>
         </Card>
         </>
