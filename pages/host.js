@@ -9,10 +9,14 @@ import {
   Button,
   Code,
 } from "@nextui-org/react";
+import Head from "next/head";
 
 export default function HostPage() {
   return (
     <>
+      <Head>
+        <title>Hosts | SolCompute</title>
+      </Head>
       <div className="flex flex-row justify-center gap-8">
         <Card className="max-w-lg">
           <CardHeader>

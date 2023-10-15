@@ -1,6 +1,7 @@
 import { Button, CardHeader, Card, Divider, CardBody } from "@nextui-org/react";
 import { Inter } from "next/font/google";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -9,6 +10,9 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>Home | SolCompute</title>
+      </Head>
       <div className="flex flex-row justify-center h-screen">
         <div className="flex flex-col max-w-md justify-center text-center gap-2 mb-auto">
           <h1 className="font-semibold text-6xl bg-gradient-to-r from-violet-600 to-cyan-400 bg-clip-text text-transparent">
