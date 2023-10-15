@@ -27,7 +27,7 @@ export default withIronSessionApiRoute(
 
             await req.session.save();
 
-            res.send({ ok: true });
+            res.send({ ok: true, id: user.id, type: user.type, email: user.email });
         }
     },
     {

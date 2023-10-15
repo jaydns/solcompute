@@ -26,7 +26,10 @@ export default function LoginPage(props) {
     if (!res.ok) return;
 
     mutate("/api/user");
-    if (formData.get("type") === "host") {
+
+    const data = await res.json();
+
+    if (data.type === "HOST") {
       router.push("/host");
     } else {
       router.push("/rent");
