@@ -1,3 +1,4 @@
+import CardBodyHost from "@/components/cardBodyHosts";
 import DeviceCard from "@/components/deviceCard";
 import {
   Card,
@@ -12,8 +13,8 @@ import {
 export default function HostPage() {
   return (
     <>
-      <div className="flex flex-col">
-        <Card className="max-w-lg mx-auto my-2">
+      <div className="flex flex-row justify-center gap-8">
+        <Card className="max-w-lg">
           <CardHeader>
             <p className="font-bold">Create Machine</p>
           </CardHeader>
@@ -32,12 +33,20 @@ export default function HostPage() {
             </Button>
           </CardFooter>
         </Card>
-        <div className="mt-6 flex flex-wrap justify-center gap-4">
-          <DeviceCard></DeviceCard>
-          <DeviceCard></DeviceCard>
-          <DeviceCard></DeviceCard>
-          <DeviceCard></DeviceCard>
-          <DeviceCard></DeviceCard>
+        <div>
+          <Card className="max-w-lg max-h-[28rem] min-w-[28rem]">
+            <CardHeader>
+              <p className="font-bold">Hosts</p>
+            </CardHeader>
+            <Divider></Divider>
+            <div className="overflow-auto">
+              <CardBodyHost></CardBodyHost>
+              <CardBodyHost></CardBodyHost>
+              <CardBodyHost></CardBodyHost>
+              <CardBodyHost></CardBodyHost>
+              <CardBodyHost></CardBodyHost>
+            </div>
+          </Card>
         </div>
       </div>
     </>
