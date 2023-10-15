@@ -27,7 +27,7 @@ export default function SignUpPage(props) {
     if (formData.get("type") === "host") {
       router.push("/host");
     } else {
-      router.push("/machines");
+      router.push("/rent");
     }
   }
 

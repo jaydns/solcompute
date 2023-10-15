@@ -8,9 +8,8 @@ export default withIronSessionApiRoute(
             const data = JSON.parse(req.body);
 
             const user = await prisma.user.findFirst({
-                data: {
+                where: {
                     email: data.email,
-                    password: await argon2.hash(data.password),
                 },
             });
 
