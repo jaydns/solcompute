@@ -1,6 +1,6 @@
 import { Button, Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/react";
 import Image from "next/image";
-import { Link } from "@nextui-org/react";
+import Link from "next/link"
 import { useRouter } from "next/router";
 import { usePathname } from "next/navigation";
 
@@ -16,17 +16,17 @@ export default function AppNavbar() {
                 </NavbarBrand>
                 <NavbarContent justify="center">
                     <NavbarItem isActive={pathname === "/rent"}>
-                        <Link color={pathname === "/rent" ? "primary" : "foreground"} href="/rent">
+                        <Link href="/rent">
                             Rent
                         </Link>
                     </NavbarItem>
                     <NavbarItem isActive={pathname === "/machines"}>
-                        <Link color={pathname === "/machines" ? "primary" : "foreground"} href="machines">
+                        <Link href="/machines">
                             Machines
                         </Link>
                     </NavbarItem>
                     <NavbarItem isActive={pathname === "/billing"}>
-                        <Link color={pathname === "/billing" ? "primary" : "foreground"} href="/billing">
+                        <Link href="/billing">
                             Billing
                         </Link>
                     </NavbarItem>
