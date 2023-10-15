@@ -16,29 +16,29 @@ export default function AppNavbar() {
                 </NavbarBrand>
                 <NavbarContent justify="center">
                     <NavbarItem isActive={pathname === "/rent"}>
-                        <Link href="/rent">
+                        <Link href="/rent" className={(pathname === "/rent") ? "text-primary" : "text-foreground"}>
                             Rent
                         </Link>
                     </NavbarItem>
                     <NavbarItem isActive={pathname === "/machines"}>
-                        <Link href="/machines">
+                        <Link href="/machines" className={(pathname === "/machines") ? "text-primary" : "text-foreground"}>
                             Machines
                         </Link>
                     </NavbarItem>
                     <NavbarItem isActive={pathname === "/billing"}>
-                        <Link href="/billing">
+                        <Link href="/billing" className={(pathname === "/billing") ? "text-primary" : "text-foreground"}>
                             Billing
                         </Link>
                     </NavbarItem>
                 </NavbarContent>
                 <NavbarContent justify="end">
                     <NavbarItem>
-                        <Button onClick={() => router.push("/signup")} as={Link} color="primary" variant="flat">
+                        <Button onClick={() => router.push("/signup")} color={pathname === "/signup" ? "primary" : "default"} variant="flat">
                             Sign up
                         </Button>
                     </NavbarItem>
                     <NavbarItem>
-                        <Button onClick={() => router.push("/login")} as={Link} color="primary" href="#" variant="flat">
+                        <Button onClick={() => router.push("/login")} color={pathname === "/login" ? "primary" : "default"} href="#" variant="flat">
                             Login
                         </Button>
                     </NavbarItem>
