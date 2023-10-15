@@ -33,7 +33,6 @@ export default function DeviceCard(props) {
                         <p>RAM: {props.ram} GB</p>
                     </div>
                     <div>
-                        <p>Uptime: {props.uptime}</p>
                         <div>
                             <MdArrowUpward className="inline-block mb-1"></MdArrowUpward>
                             <p className="inline-block">{props.uploadSpeed} Mbps</p>

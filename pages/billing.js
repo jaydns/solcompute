@@ -8,7 +8,7 @@ export default function PaymentsPage() {
         <title>Billing | SolCompute</title>
       </Head>
       <div className="flex flex-row gap-12 justify-center">
-        <PaymentCards address="3n2C45yBiNapKh6EdDekesZccAFdwTatu46Eyw1UnKx2"></PaymentCards>
+        <PaymentCards address="5VVMbS17ZQ3RNRwsHxbbzQUEY3Q8ys9USBXpNf38EjKH"></PaymentCards>
       </div>
     </>
   );

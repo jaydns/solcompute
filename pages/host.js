@@ -65,12 +65,14 @@ export default function HostPage() {
               {machineRawData?.data?.map((machine) => (
                 <DeviceCard
                   key={machine.id}
+                  id={machine.id}
                   operatingSystem={machine.operatingSystem}
                   cpu={machine.cpu}
                   gpu={machine.gpu}
                   ramGbs={machine.ramGbs}
                   downloadSpeed={machine.downloadSpeedMbps}
                   uploadSpeed={machine.uploadSpeedMbps}
+                  costLamports={machine.costLamports}
                 />
               ))}
             </div>

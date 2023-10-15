@@ -12,7 +12,7 @@ export default function ClientsPage() {
   const [isLoading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('/api/machines')
+    fetch('/api/rentedMachines')
       .then((res) => res.json())
       .then((data) => {
         setData(data)

@@ -18,6 +18,13 @@ export default withIronSessionApiRoute(
                 return;
             }
 
+            const passwordMatches = await argon2.verify(user.password, data.password);
+
+            if (!passwordMatches) {
+                res.status(401).send({ ok: false });
+                return;
+            }
+
             req.session.user = {
                 isLoggedIn: true,
                 id: user.id,
