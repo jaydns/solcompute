@@ -2,9 +2,11 @@ import { Button, Card, CardBody, CardFooter, CardHeader, Divider, Input, RadioGr
 import { useState } from "react";
 import Link from "next/link"
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai"
+import { useRouter } from "next/router";
 
 export default function SignUpCard(props) {
     const [isVisible, setIsVisible] = useState(false);
+    const router = useRouter();
 
     async function onSubmit(event) {
         event.preventDefault();
@@ -17,6 +19,8 @@ export default function SignUpCard(props) {
                 type: formData.get("type")
             })
         });
+
+        router.push("/machines");
     }
 
     const toggleVisibility = () => setIsVisible(!isVisible)
