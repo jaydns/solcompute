@@ -14,7 +14,7 @@ export default function AppNavbar() {
 
     return (
         <>
-            <Navbar className={(pathname === "/" ? "" : "mb-6")}>
+            <Navbar className={(pathname === "/" ? "absolute" : "mb-6")}>
                 <NavbarBrand>
                     <Image onClick={() => router.push("/")} src="/solcompute_nobg.png" width={50} height={50} alt="idk" className="font-bold mr-2 hover:cursor-pointer"></Image>
                     <Link className={(pathname === "/" ? "text-primary hover:cursor-pointer font-bold" : "text-foreground hover:cursor-pointer")} href="/">SolCompute</Link>
