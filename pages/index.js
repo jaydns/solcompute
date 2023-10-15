@@ -1,5 +1,7 @@
 import { Button, CardHeader, Card, Divider, CardBody } from "@nextui-org/react";
 import { Inter } from "next/font/google";
+import Image from "next/image";
+import bg from "../public/background.webp";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
@@ -13,13 +15,16 @@ export default function Home() {
       <Head>
         <title>Home | SolCompute</title>
       </Head>
-      <div className="flex flex-row justify-center h-screen">
+      <div
+        style={{ backgroundImage: `url(${bg.src})` }}
+        className="flex flex-row justify-center h-screen"
+      >
         <div className="flex flex-col max-w-md justify-center text-center gap-2 mb-auto">
           <h1 className="font-semibold text-6xl bg-gradient-to-r from-violet-600 to-cyan-400 bg-clip-text text-transparent">
             Decentralized
           </h1>
           <h1 className="font-semibold text-6xl">Computing.</h1>
-          <p className="text-center max-w-md mx-auto mt-4 text-default-500">
+          <p className="text-center max-w-md mx-auto mt-4 text-default-800">
             Powered by the Solana blockchain, which means that it is
             confidential and secure. Users can be confident that their data and
             transactions are safe.
@@ -27,7 +32,7 @@ export default function Home() {
           <div className="flex flex-row justify-center gap-4">
             <Button
               onClick={() => router.push("#down")}
-              variant="bordered"
+              variant="shadow"
               color="secondary"
             >
               Earn Passive Income
@@ -35,14 +40,14 @@ export default function Home() {
             <Button
               className="w-24 mx-auto"
               onClick={() => router.push("/signup")}
-              variant="bordered"
+              variant="shadow"
               color="success"
             >
               Get Started
             </Button>
             <Button
               onClick={() => router.push("#down")}
-              variant="bordered"
+              variant="shadow"
               color="primary"
             >
               Support Large Projects

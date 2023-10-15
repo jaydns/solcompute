@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <link rel="shortcut icon" href="/solcompute.png" />
+        <link rel="shortcut icon" href="/solcompute_nobg.png" />
       </Head>
       <body>
         <Main />

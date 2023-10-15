@@ -9,9 +9,9 @@ export default function AppNavbar() {
     const pathname = usePathname()
     return (
         <>
-            <Navbar className="mb-6 data-[active=true]:after:color">
+            <Navbar className={(pathname === "/" ? "" : "mb-6")}>
                 <NavbarBrand>
-                    <Image onClick={() => router.push("/")} src="/solcompute.png" width={50} height={50} alt="idk" className="font-bold mr-2 hover:cursor-pointer"></Image>
+                    <Image onClick={() => router.push("/")} src="/solcompute_nobg.png" width={50} height={50} alt="idk" className="font-bold mr-2 hover:cursor-pointer"></Image>
                     <Link className={(pathname === "/" ? "text-primary hover:cursor-pointer font-bold" : "text-foreground hover:cursor-pointer")} href="/">SolCompute</Link>
                 </NavbarBrand>
                 <NavbarContent justify="center">
