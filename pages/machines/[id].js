@@ -16,7 +16,7 @@ export default function ExpandedPage() {
         setData(data.data.find((machine) => machine.id == router.query.id))
         setLoading(false)
       })
-  }, [])
+  }, [router.query.id])
 
   return (
     <>

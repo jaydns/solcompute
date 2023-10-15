@@ -1,4 +1,6 @@
 import { Card, CardBody, CardHeader, Divider, CardFooter, Image, Button } from "@nextui-org/react";
+import { useRouter } from "next/router";
+import { useState } from "react";
 import { MdArrowUpward, MdArrowDownward } from "react-icons/md";
 
 
@@ -14,7 +16,27 @@ export default function ExpandedPageLayout({
     uptime = "Unknown Uptime",
     uploadSpeed,
     downloadSpeed,
+    alreadyRented = false
 }) {
+    const router = useRouter();
+    const [rentingLoadingState, setRentingLoadingState] = useState(false);
+
+    function onRentButtonClick() {
+        setRentingLoadingState(true);
+
+        fetch(`/api/rent`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                id: id
+            })
+        }).then(() => {
+            router.push("/machines");
+        });
+    }
+
     return (
         <>
             <div className="flex flex-wrap gap-12 justify-center m-4">
@@ -55,7 +77,7 @@ export default function ExpandedPageLayout({
                     <Divider></Divider>
                     <CardBody>
                         <p>Type: Wired</p>
-                        <p>Download: 100 Mbps</p>
+                        <p>Download: 1000 Mbps</p>
                         <p>Upload: 100 Mbps</p>
                         <p>Data transferred: 21.05 GB</p>
                     </CardBody>
@@ -67,11 +89,11 @@ export default function ExpandedPageLayout({
                     </CardHeader>
                     <Divider></Divider>
                     <CardBody>
-                        <p>Total: 2.5 TB</p>
-                        <p>Used: 1.6 TB</p>
-                        <p>Available: 0.9 TB</p>
-                        <p>Read speed: 50 MB/s</p>
-                        <p>Write speed: 200 MB/s</p>
+                        <p>Total: 1 TB</p>
+                        <p>Used: 0.6 TB</p>
+                        <p>Available: 0.4 TB</p>
+                        <p>Read speed: 2000 MB/s</p>
+                        <p>Write speed: 1000 MB/s</p>
                     </CardBody>
                 </Card>
 
@@ -95,11 +117,8 @@ export default function ExpandedPageLayout({
                     </CardHeader>
                     <Divider></Divider>
                     <CardBody>
-                        <p>AMD EPYC</p>
+                        <p>{cpu}</p>
                         <p>Utilization: 1%</p>
-                        <p>Speed: 4.04 GHz</p>
-                        <p>Cores: 16</p>
-                        <p>Threads: 32</p>
                     </CardBody>
                 </Card>
 
@@ -109,9 +128,8 @@ export default function ExpandedPageLayout({
                     </CardHeader>
                     <Divider></Divider>
                     <CardBody>
-                        <p>NVIDIA GeForce RTX 4090</p>
+                        <p>{gpu}</p>
                         <p>Utilization: 1%</p>
-                        <p>GPU Memory: 16 GB</p>
                     </CardBody>
                 </Card>
 
@@ -123,10 +141,10 @@ export default function ExpandedPageLayout({
                     <CardBody>
                         <p>{costLamports / 1000000000} SOL/hr</p>
                     </CardBody>
-                    <Divider></Divider>
-                    <CardFooter>
-                        <Button variant="solid" color="primary" className="mx-auto" >Rent</Button>
-                    </CardFooter>
+                    {!alreadyRented && (<><Divider></Divider>
+                        <CardFooter>
+                            <Button onClick={onRentButtonClick} isLoading={rentingLoadingState} variant="solid" color="primary" className="mx-auto" >Rent</Button>
+                        </CardFooter></>)}
                 </Card>
             </div>
         </>
