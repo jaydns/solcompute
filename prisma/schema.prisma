@@ -1,0 +1,41 @@
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+model User {
+    id             String        @id @default(uuid())
+    email          String
+    password       String
+    type           AccountType
+    balance        Decimal       @default(0)
+    transactions   Transaction[]
+    ownedMachines  Machine[]     @relation(name: "ownedMachines")
+    rentedMachines Machine[]     @relation(name: "rentedMachines")
+}
+
+model Machine {
+    id           String  @id @default(uuid())
+    costLamports Int?
+    renter       User?   @relation(name: "ownedMachines", fields: [renterId], references: [id], onDelete: SetNull)
+    renterId     String?
+    owner        User    @relation(name: "rentedMachines", fields: [userId], references: [id], onDelete: Cascade)
+    userId       String
+}
+
+model Transaction {
+    id           String  @id @default(uuid())
+    costLamports Int?
+    user         User?   @relation(fields: [userId], references: [id], onDelete: SetNull)
+    userId       String?
+    paid         Boolean
+}
+
+enum AccountType {
+    HOST
+    CONSUMER
+}
