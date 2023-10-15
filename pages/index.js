@@ -1,7 +1,7 @@
 import { Button, CardHeader, Card, Divider, CardBody } from "@nextui-org/react";
 import { Inter } from "next/font/google";
 import Image from "next/image";
-import bg from "../public/background.webp";
+import bg from "../public/backgroundblur.png";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
@@ -19,7 +19,7 @@ export default function Home() {
         style={{ backgroundImage: `url(${bg.src})` }}
         className="flex flex-row justify-center h-screen"
       >
-        <div className="flex flex-col max-w-md justify-center text-center gap-2 mb-auto">
+        <div className="flex flex-col max-w-md justify-center text-center gap-2 mb-auto mt-4">
           <h1 className="font-semibold text-6xl bg-gradient-to-r from-violet-600 to-cyan-400 bg-clip-text text-transparent">
             Decentralized
           </h1>
